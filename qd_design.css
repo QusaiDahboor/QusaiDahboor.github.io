@@ -1,0 +1,500 @@
+<style rel="stylesheet">
+
+/* width */
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 40px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #7e8082;
+	border-radius: 40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #8c9bab;
+}
+
+
+body {
+  font-family: Arial;
+  background-color: #f1f3f9;
+  color: #7d7d7e;
+  margin: 0;
+}
+
+body.dark{
+	background: #262626;
+	color: #fff;
+}
+
+.content {
+	background-color: #f1f3f9;
+	padding: 20px;
+	width: 1080px;
+	margin: 0 auto;
+}
+
+body.dark .content{
+	background: #262626;
+	color: #fff;
+}
+
+#topNav {
+  background-color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+
+#topNav .date {
+  text-transform: uppercase;
+  float: right;
+  font-size: 12px;
+}
+
+body.dark #topNav{
+	background: #262626;
+	color: #fff;
+}
+
+
+.title h2,.title h5 {
+  display: inline;
+  font-weight: 100;
+  padding-right: 5px;
+}
+
+.row {
+  margin-top: 25px;
+}
+
+.row .column {
+  display: inline-block;
+  width: 484px;
+  background-color: #fff;
+  height: 343px;
+  padding: 25px 18px;
+  box-shadow: 0 1px 5px #C8C8C8;
+}
+
+.color-blocks div {
+  color: #fff;
+  width: 307px;
+  height: 66px;
+  display: inline-block;
+  position: relative;
+  margin-right: 30px;
+  padding: 28px 14px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+body.dark .color-blocks div{
+	box-shadow: 0 7px 9px #C8C8C8;
+}
+
+.color-blocks .blue {
+  background-color: #4b88b6;
+}
+
+.color-blocks .red {
+  background-color: #e44a50;
+}
+
+.color-blocks .green {
+  background-color: #109618;
+  margin-right: 0;
+}
+
+.color-blocks .blue:hover {
+  background-color: #80ABCB;
+}
+
+.color-blocks .red:hover {
+  background-color: #EB7F83;
+}
+
+.color-blocks .green:hover {
+  background-color: #73C4BE;
+}
+
+
+.color-blocks div .count {
+  font-size: 36px;
+  width: 100%;
+  text-align: right;
+  display: block;
+}
+
+.color-blocks div .description {
+  font-size: 16px;
+  float: right;
+  text-align: right;
+  display: block;
+}
+
+.color-blocks div .bottom svg {
+  float: right;
+  margin-top: -1px;
+}
+
+.row .column h1 {
+  color: #568fba;
+  font-size: 18px;
+  font-style: oblique;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.row .column h1 span {
+  font-size: 12px;
+  color: #9eacb3;
+  font-weight: 100;
+  margin-left: 5px;
+}
+
+body.dark .row .column h1 span {
+	color: #fff;
+}
+
+.row .column.pie {
+  position: relative;
+  border-radius: 70px;
+}
+
+
+text {
+  fill: #929ba6;
+  stroke-width: .2px;
+}
+
+.blue{
+ color: #80abcb;
+}
+
+.red {
+  color: #f6515f;
+}
+
+.green {
+  color: #109618;
+}
+
+/**********************************/
+
+
+/* add new css for  piechart */
+
+#piechart{
+ width: 500px;
+ height: 300px;
+}
+
+#piechart g text{
+     fill: #262626;
+}
+
+body.dark #piechart g text{
+	fill: #fff;
+}
+
+body.dark #piechart svg rect,
+body.dark #piechart g g path{
+	fill: #262626;
+}
+
+
+/**********************************/
+
+
+/* button Dark Mode and light */
+
+ul.listMode{
+	position: fixed;
+	top: 35px;
+	right: 20px;
+	margin: 0;
+	padding: 0;
+	width: 100px;
+	height: 30px;
+	z-index: 1;
+	border: 1px solid #000;
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 100px;
+}
+
+ul.listMode li{
+	list-style: none;
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 0.4s;
+}
+
+ul.listMode.active li{
+	transform: translateY(-30px);
+}
+
+ul.listMode li span{
+	display: block;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+
+}
+
+ul.listMode li span.darkMode{
+	background: #262626;
+	color: #fff;
+}
+
+body.dark ul.listMode{
+	box-shadow: 0 3px 20px #C8C8C8;
+}
+
+/**********************************/
+
+
+/* when move the dark Mode */
+
+body.dark .row .column {
+    display: inline-block;
+    background-color: #262626;
+    color: #fff;
+    box-shadow: 0 0px 80px #C8C8C8;
+}
+
+
+/**********************************/
+
+/* emotionIcon */
+
+.emotionIcon {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 21px;
+	opacity: .1;
+}
+
+svg#emotionIconTotal{
+	height: 128px;
+	width: 110px;
+}
+g#emotionIconTotal{
+	stroke:none;
+	stroke-width: 1;
+	fill:none;
+	fill-rule:evenodd;
+}
+path#emotionIconTotal{
+	fill:#ffffff;
+}
+
+
+svg#emotionIconPassed{
+	height: 128px;
+	width: 128px;
+}
+g#emotionIconPassed{
+	stroke:none;
+	stroke-width: 1;
+	fill:none;
+	fill-rule:evenodd;
+}
+path#emotionIconPassed{
+	fill:#ffffff;
+}
+
+svg#emotionIconFailed{
+	height: 128px;
+	width: 128px;
+}
+g#emotionIconFailed{
+	stroke:none;
+	stroke-width: 1;
+	fill:none;
+	fill-rule:evenodd;
+}
+path#emotionIconFailed{
+	fill:#ffffff;
+}
+
+/**********************************/
+
+/* Logo */
+
+svg#logoReport{
+	height: 80px;
+	width: 80px;
+}
+
+g#logoReport{
+	stroke:none;
+	stroke-width: 1;
+	fill:none;
+	fill-rule:evenodd;
+}
+
+/**********************************/
+
+/* TestCases */
+
+div.listOfScenarios{
+	background-color: #ffffff;
+	width: auto;
+	height: auto;
+	border-radius: 80px;
+	padding: 10px;
+}
+
+
+body.dark div.listOfScenarios{
+	background-color: #262626;
+	box-shadow: 0 0px 10px #C8C8C8;
+}
+
+div.testCase{
+	background-color: #f5f4f4;
+	height: auto;
+	width: 950px;
+	border-radius: 50px;
+	margin-left: 25px;
+	padding: 25px;
+}
+
+body.dark div.testCase{
+	background-color: #262626;
+	box-shadow: 0 0px 8px #C8C8C8;
+}
+
+
+div.testCase.active{
+	display: block;
+}
+
+div.testCase.nonactive{
+	display: none;
+}
+
+div.testCase text{
+	color: #333;
+	font-size: 13px;
+}
+
+body.dark div.testCase text{
+	color: #faf7f7;
+}
+
+div.infoTestCase{
+	display: none;
+}
+
+div.infoTestCase.active{
+	background-color: #f5f4f4;
+	margin-left: 25px;
+	padding: 5px;
+	color: #333;
+	font-size: 13px;
+	word-break: break-all;
+	display: list-item;
+	border-radius: 50px;
+	border: 0.16em solid #757575;
+	box-shadow: 0 4px 5px #C8C8C8;
+}
+
+body.dark div.infoTestCase.active{
+	background-color: #262626;
+	color: #faf7f7;
+}
+
+div.messageTestCase{
+	background-color: #f5f4f4;
+	margin-left: 25px;
+	padding: 5px;
+	color: #333;
+	font-size: 13px;
+	word-break: break-all;
+	display: list-item;
+}
+
+body.dark div.messageTestCase{
+	background-color: #262626;
+	color: #faf7f7;
+}
+
+
+span.wordExpected{
+	font-weight: bold;
+	color: #109618;
+}
+
+span.wordActual{
+	font-weight: bold;
+	color: #e44a50;
+
+}
+
+/**********************************/
+
+/* statusTestCasesIcon */
+
+#passedIcon{
+	margin: -3px;
+	margin-left: 10px;
+	width: 13px;
+}
+
+#failedIcon{
+	margin: -13px;
+	margin-left: 10px;
+	width: 30px;
+}
+
+/**********************************/
+
+/* button Info Services */
+
+div.infoServices{
+	idth: auto;
+	height: auto;
+	border-radius: 100px;
+	padding: 10px;
+}
+
+button.buttonInfoServices{
+	background-color:#f14e4e;
+	color:#FFFFFF;
+	display:inline-block;
+	padding:0.3em 1.2em;
+	margin:0 0.1em 0.1em 0;
+	border:0.16em solid rgba(255,255,255,0);
+	border-radius:2em;
+	font-family:"Roboto",sans-serif;
+	font-weight:300;
+	cursor: pointer;
+	box-sizing: border-box;
+	text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+	text-align:center;
+	transition: all 0.2s;
+}
+
+body.dark button.buttonInfoServices{
+	box-shadow: 0 3px 20px #C8C8C8;
+}
+
+
+
+</style>
